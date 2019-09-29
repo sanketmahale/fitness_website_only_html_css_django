@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="master.css">
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.picture{
+  overflow: hidden;
+  background-color: rgb(24, 91, 179);
+}
+
+.picture img {
+  float: left;
+  clear:both;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #d2fafb;
+  position: -webkit-sticky; /* Safari */
+  position :relative;
+  top: 0;
+  width: 100%
+}
+
+.topnav a {
+  float: left;
+  color: rgb(128, 129, 196);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: rgb(0, 0, 0);
+  color: rgb(218, 230, 228);
+}
+
+.topnav a.active {
+  background-color: rgb(49, 144, 168);
+  color: rgb(218, 230, 228);
+}
+section{
+  padding: 0%;
+}
+.first{
+  background-color: #d2fafb;
+  height : 400px;
+  padding-top: 0px ;
+  padding: 0px;
+  margin: 0px;
+  display:flex;
+}
+.footer{
+  background-color: #95adbe;
+  height : 350px;
+  padding: 0px;
+  margin: 0px;
+  display: flex;
+}
+#mySidenav a {
+  float: right;
+  right: -80px;
+  overflow: hidden;
+  transition: 0.3s;
+  padding: 15px;
+  width: 100px;
+  text-decoration: none;
+  font-size: 16px;
+  color: white;
+  border-radius: a 5px 5px 0;
+}
+
+#mySidenav a:hover {
+  right: 0;
+}
+
+#signin {
+  top: 20px;
+  background-color: #39bdc8;
+}
+
+#login {
+  top: 80px;
+  background-color: #226b80;
+}
+.container {
+  position :relative;
+}
+
+/* Bottom right text */
+.text-block {
+  position: absolute;
+  top: 0px;
+  bottom: 20px;
+  background-color: #696464;
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+  justify-content: center;
+  margin-left: 50%;
+  height: 400px;
+  font-style:Arial;
+  text-decoration: none;
+}
+.text-block1 {
+  position: absolute;
+  top: 0px;
+  bottom: 20px;
+  background-color: #f9f9f9;
+  color: #504658;
+  padding-left: 20px;
+  padding-right: 20px;
+  justify-content: center;
+  margin-right:50%;
+  height: 400px;
+  font-style:Arial;
+  text-decoration: none;
+}
+.img{
+  height: 400px;
+}
+.img1{
+  height: 400px;
+  margin-left: 50%
+}
+</style>
+</head>
+<body>
+
+  <div class="picture">
+    <img src="imgg.png" width=50px height=50px>
+  </div>
+
+<div class="topnav">
+  <a class="active" href="#home">Trainers</a>
+  <a href="#news">Workout</a>
+  <a href="#contact">Health Plan</a>
+  <a href="#about">About</a>
+  <div id="mySidenav" class="sidenav">
+    <a href="signup.html" id="signin">Sign Up</a>
+    <a href="login.html" id="login">Login</a>
+  </div>
+</div>
+
+<div>
+  <h2>Top Navigation Example</h2>
+</div>
+<div class="container">
+  <img class="img" src="first.jpg" alt="Norway" style="width:50%;">
+  <div class="text-block">
+    <h2>Fitness</h2>
+    <br>
+    <h3>This is our info</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  </div>
+</div>
+<div class="container">
+  <img class="img1" src="food.jpg" alt="Norway" style="width:50%;">
+  <div class="text-block1">
+    <h2>Food</h2>
+    <br>
+    <h3>This is our introduction kindly read it  </h3>
+    <br>
+    <h3>Thanks</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  </div>
+</div>
+<div class="first">
+    <p>This is Third para</p>
+</div>
+<footer class="footer-distributed">
+    <div class="footer-left">
+        <h3>Company<span>logo</span></h3>
+      <p class="footer-links">
+        <a href="#">Home</a>
+        ·
+        <a href="#">Blog</a>
+        ·
+        <a href="#">Pricing</a>
+        ·
+        <a href="#">About</a>
+        ·
+        <a href="#">Faq</a>
+        ·
+        <a href="#">Contact</a>
+      </p>
+      <p class="footer-company-name">Company Name &copy; 2015</p>
+    </div>
+    <div class="footer-center">
+      <div>
+        <i class="fa fa-map-marker"></i>
+        <p><span>Collectors Colony</span> Chembur,Mumbai</p>
+      </div>
+      <div>
+        <i class="fa fa-phone"></i>
+        <p>1234567890</p>
+      </div>
+      <div>
+        <i class="fa fa-envelope"></i>
+        <p><a href="mailto:support@company.com">support@company.com</a></p>
+      </div>
+    </div>
+    <div class="footer-right">
+      <p class="footer-company-about">
+        <span>About the company</span>
+        Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
+      </p>
+      <div class="footer-icons">
+        <a href="#"><i class="fa fa-facebook"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+        <a href="#"><i class="fa fa-linkedin"></i></a>
+        <a href="#"><i class="fa fa-github"></i></a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
