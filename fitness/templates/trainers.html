@@ -1,0 +1,207 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+h1{
+	text-align: center;
+	padding-top: 20px
+}
+
+.picture{
+  overflow: hidden;
+  background-color: rgb(24, 91, 179);
+}
+
+.picture img {
+  float: left;
+  clear:both;
+}
+.topnav {
+  overflow: hidden;
+  background-color: #d2fafb;
+  position: -webkit-sticky; /* Safari */
+  position :relative;
+  top: 0;
+  width: 100%
+}
+
+.topnav a {
+  float: left;
+  color: rgb(128, 129, 196);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: rgb(0, 0, 0);
+  color: rgb(218, 230, 228);
+}
+
+.topnav a.active {
+  background-color: rgb(49, 144, 168);
+  color: rgb(218, 230, 228);
+}
+
+#mySidenav a {
+  float: right;
+  right: -80px;
+  overflow: hidden;
+  transition: 0.3s;
+  padding: 15px;
+  width: 100px;
+  text-decoration: none;
+  font-size: 16px;
+  color: white;
+  border-radius: a 5px 5px 0;
+}
+
+#mySidenav a:hover {
+  right: 0;
+}
+
+#signin {
+  top: 20px;
+  background-color: #39bdc8;
+}
+
+#login {
+  top: 80px;
+  background-color: #226b80;
+}
+
+.container {
+  position :relative;
+
+}
+
+/* Bottom right text */
+.text-block {
+  position: absolute;
+  top: 0px;
+  bottom: 20px;
+  background-color: #696464;
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+  justify-content: center;
+  margin-left: 50%;
+  height: 400px;
+  font-style:Arial;
+  text-decoration: none;
+}
+.img{
+  height: 400px;
+  width: 400px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+.xyz{
+  float: left;
+  padding: 15px;
+  padding-left: 145px;
+}
+
+.xyz h3{
+  padding-left: 20px;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 300px;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.flip-card-back {
+  background-color: #2980b9;
+  color: white;
+  transform: rotateY(180deg);
+}
+</style>
+	<title>Trainers</title>
+</head>
+<body>
+	<div class="picture">
+    	<img src="{% static 'img/imgg.png' %}" width=50px height=50px>
+  	</div>
+  <div>
+	 <h1>MEET OUR TRAINERS</h1>
+  </div>
+  <div class="container">
+    <div class="xyz">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="{% static 'img/trainer1.jpg'%}" alt="Avatar" style="width:300px;height:300px;">
+          </div>
+          <div class="flip-card-back">
+            <h1>John Doe</h1> 
+            <p>Architect & Engineer</p> 
+            <p>We love that guy</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="xyz">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="{% static 'img/trainer2.jpg'%}" alt="Avatar" style="width:300px;height:300px;">
+          </div>
+          <div class="flip-card-back">
+            <h1>John D</h1> 
+            <p>Architect & Engineer</p> 
+            <p>We love that guy</p>
+          </div>
+        </div>
+    </div>
+
+    </div>
+    <div class="xyz">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="{% static 'img/trainer3.jpg'%}" alt="Avatar" style="width:300px;height:300px;">
+          </div>
+          <div class="flip-card-back">
+            <h1>John Dog</h1> 
+            <p>Architect & Engineer</p> 
+            <p>We love that dog</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
