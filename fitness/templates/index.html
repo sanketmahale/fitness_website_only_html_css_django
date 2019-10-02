@@ -134,7 +134,45 @@ section{
   height: 250px;
   margin-left: 200px;
 }
+.result{
+  position: absolute;
+  margin-left: 52%;
+}
 </style>
+<script type="text/javascript">
+
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+    var feet = parseInt(document.getElementById("feet").value);
+    var inches = parseInt(document.getElementById("inches").value);
+    var weight = parseInt(document.getElementById("weight").value);
+    console.log(feet);
+    var height1 = feet * 0.3048;
+    var height = height1 + inches * 0.0254; 
+    var result = weight/(height*height);
+    var display="";
+    if(result<18.5){
+      display ="Underweight";}
+    else if(result>18.5 && result<24.9){
+      display="Normal";}
+    else if(result>25 && result<29.9){
+      display = "Overweight";}
+    else{
+      display ="Obese";}
+    responseText1 = "Your BMI : "+ result ;
+    responseText2 = "Your are "+ display ;
+    document.getElementById("rel").innerHTML="RESULT";
+    document.getElementById("sol1").innerHTML = responseText1;
+    document.getElementById("sol2").innerHTML = responseText2;
+    }
+  };
+
+  function cal(){
+  xhttp.open('GET','',true);
+  xhttp.send();
+}
+</script>
 </head>
 <body>
 
@@ -153,9 +191,6 @@ section{
   </div>
 </div>
 
-<div>
-  <h2>Top Navigation Example</h2>
-</div>
 <div class="container">
   <img class="img" src="{% static 'img/first.jpg'%}" alt="Norway" style="width:50%;">
   <div class="text-block">
@@ -179,16 +214,20 @@ section{
     <div class="container">
       <div class="bmi">
         <h2>Calculate your BMI</h2>
+        <div class="result">
+            <h2 id ="rel"></h2>
+            <h3 id="sol1"></h3>
+            <h3 id="sol2"></h3>
+        </div>
         <h3>Height</h3>
         <h4>Feet</h4>
-        <form action="">
         <select id="feet" name="feet">
           <option value="4">4</option>
           <option value="5">5</option>
           <option value="6">6</option>
         </select>
         <label><h4>Inches</h4></label> 
-        <select id="Inches" name="country">
+        <select id="inches" name="inches">
             <option value="0">0</option>
             <option value="1">1</option>
             <option value="2">2</option>
@@ -202,25 +241,20 @@ section{
             <option value="10">10</option>
             <option value="11">11</option>
           </select>
-        <h3><label for="Weight">Weight: </label><input type="text" id="fname" placeholder="Your Weight.."></h3>
-        <button>Submit</button> 
-      </form>
+        <h3><label for="Weight">Weight: </label><input type="text" id="weight" placeholder="Your Weight.."></h3>
+        <button type="button" onclick="cal()">Submit</button> 
       </div>
     </div>
 <div>
 <footer class="footer-distributed">
     <div class="footer-left">
-        <h3>Company<span>logo</span></h3>
+        <h3>Fittness<span> Website</span></h3>
       <p class="footer-links">
         <a href="#">Home</a>
         ·
-        <a href="#">Blog</a>
-        ·
-        <a href="#">Pricing</a>
+        <a href="pricing">Pricing</a>
         ·
         <a href="#">About</a>
-        ·
-        <a href="#">Faq</a>
         ·
         <a href="#">Contact</a>
       </p>
@@ -245,12 +279,6 @@ section{
         <span>About the company</span>
         Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
       </p>
-      <div class="footer-icons">
-        <a href="#"><i class="fa fa-facebook"></i></a>
-        <a href="#"><i class="fa fa-twitter"></i></a>
-        <a href="#"><i class="fa fa-linkedin"></i></a>
-        <a href="#"><i class="fa fa-github"></i></a>
-      </div>
     </div>
   </footer>
 </body>
