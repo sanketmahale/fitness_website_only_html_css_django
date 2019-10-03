@@ -48,6 +48,12 @@ h1{
   width: 400px;
   padding-right: 10px;
   padding-left: 10px;
+  border: 1px solid #eee;
+  background-color: transparent;
+}
+
+.img :hover{
+    box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2)
 }
 .xyz{
   float: left;
@@ -97,6 +103,11 @@ h1{
   color: white;
   transform: rotateY(180deg);
 }
+.name{
+    text-align: center;
+    color: #696464;
+    text-decoration: none;
+}
 </style>
 	<title>Trainers</title>
 </head>
@@ -105,52 +116,37 @@ h1{
     	<img src="{% static 'img/imgg.png' %}" width=50px height=50px>
   	</div>
   <div>
-	 <h1>MEET OUR TRAINERS</h1>
+	 <h1>Healthy food</h1>
   </div>
   <div class="container">
     <div class="xyz">
       <div class="flip-card">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <img src="{% static 'img/trainer1.jpg'%}" alt="Avatar" style="width:300px;height:300px;">
-          </div>
-          <div class="flip-card-back">
-            <h1>John Doe</h1> 
-            <p>Architect & Engineer</p> 
-            <p>We love that guy</p>
-          </div>
+            <a href="pricing">
+            <img src="{% static 'img/slim.jpg'%}" alt="Avatar" style="width:300px;height:300px;"></a>
+            <div class="name" >
+                    <h2>Grow Taller</h2>
+            </div>
         </div>
-      </div>
-
     </div>
     <div class="xyz">
       <div class="flip-card">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <img src="{% static 'img/trainer2.jpg'%}" alt="Avatar" style="width:300px;height:300px;">
-          </div>
-          <div class="flip-card-back">
-            <h1>John D</h1> 
-            <p>Architect & Engineer</p> 
-            <p>We love that guy</p>
-          </div>
+        <a href="pricing">
+        <img src="{% static 'img/height.jpg'%}" alt="Avatar" style="width:300px;height:300px;"></a>
+        </div>
+        <div class="name" >
+                <h2>Loose Weight</h2>
         </div>
     </div>
 
     </div>
     <div class="xyz">
       <div class="flip-card">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <img src="{% static 'img/trainer3.jpg'%}" alt="Avatar" style="width:300px;height:300px;">
+            <a href="pricing">
+            <img src="{% static 'img/signup1.jpg'%}" alt="Avatar" style="width:300px;height:300px;"></a>
           </div>
-          <div class="flip-card-back">
-            <h1>John Dog</h1> 
-            <p>Architect & Engineer</p> 
-            <p>We love that dog</p>
-          </div>
+          <div class="name" >
+                <h2>Grow Taller</h2>
         </div>
-      </div>
     </div>
   </div>
 </body>

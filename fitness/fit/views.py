@@ -10,3 +10,7 @@ def pricing(request):
     return render(request,'pricing.html')
 def trainers(request):
     return render(request,'trainers.html')
+def signup(request):
+    return render(request,'signup.html')
+def recepies(request):
+    return render(request,'recepies.html')

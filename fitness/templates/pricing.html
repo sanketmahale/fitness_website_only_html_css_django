@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,6 +6,21 @@
 <style>
 * {
   box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0%;
+}
+.picture{
+  overflow: hidden;
+  background-color: rgb(24, 91, 179);
+}
+
+.picture img {
+  float: left;
+  clear:both;
 }
 
 .columns {
@@ -62,17 +78,18 @@
 </head>
 <body>
 
-
-
+    <div class="picture">
+      <img src="{% static 'img/imgg.png' %}" width=50px height=50px>
+    </div>
 <div class="columns">
   <ul class="price">
     <li class="header">Basic</li>
     <li class="grey">Rs. 2500/ 3 month</li>
     <li>Personal Trainer</li>
-    <li>10 Emails</li>
-    <li>10 Domains</li>
-    <li>1GB Bandwidth</li>
-    <li class="grey"><a href="#" class="button">Sign Up</a></li>
+    <li>Workout plans</li>
+    <li>Diet plans</li>
+    <li>Trainer</li>
+    <li class="grey"><a href="signup" class="button">Sign Up</a></li>
   </ul>
 </div>
 
@@ -80,11 +97,11 @@
   <ul class="price">
     <li class="header" style="background-color:#4CAF50">Pro</li>
     <li class="grey">Rs. 4500 / 6 month</li>
-    <li>25GB Storage</li>
-    <li>20</li>
-    <li>25 Domains</li>
-    <li>2GB Bandwidth</li>
-    <li class="grey"><a href="#" class="button">Sign Up</a></li>
+    <li>Personal Trainer</li>
+    <li>Workout plans</li>
+    <li>Diet plans</li>
+    <li>Trainer</li>
+    <li class="grey"><a href="signup" class="button">Sign Up</a></li>
   </ul>
 </div>
 
@@ -92,11 +109,11 @@
   <ul class="price">
     <li class="header">Premium</li>
     <li class="grey">Rs. 9000 / year</li>
-    <li>40</li>
-    <li>50 </li>
-    <li>30</li>
-    <li> Huge Discounts</li>
-    <li class="grey"><a href="#" class="button">Sign Up</a></li>
+    <li>Personal Trainer</li>
+    <li>Workout plans</li>
+    <li>Diet plans</li>
+    <li>Trainer</li>
+    <li class="grey"><a href="signup" class="button">Sign Up</a></li>
   </ul>
 </div>
 
