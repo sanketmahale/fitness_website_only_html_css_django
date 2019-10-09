@@ -59,6 +59,7 @@ h1{
   float: left;
   padding: 15px;
   padding-left: 145px;
+  padding-top: 60px;
 }
 
 .xyz h3{
@@ -118,36 +119,18 @@ h1{
   <div>
 	 <h1>Healthy food</h1>
   </div>
+  {% for meal in meals %}
   <div class="container">
     <div class="xyz">
       <div class="flip-card">
             <a href="pricing">
-            <img src="{% static 'img/slim.jpg'%}" alt="Avatar" style="width:300px;height:300px;"></a>
+            <img src="{{meal.image.url}}" alt="Avatar" style="width:300px;height:300px;"></a>
             <div class="name" >
-                    <h2>Grow Taller</h2>
+                    <h2>{{meal.name}}</h2>
             </div>
         </div>
     </div>
-    <div class="xyz">
-      <div class="flip-card">
-        <a href="pricing">
-        <img src="{% static 'img/height.jpg'%}" alt="Avatar" style="width:300px;height:300px;"></a>
-        </div>
-        <div class="name" >
-                <h2>Loose Weight</h2>
-        </div>
     </div>
-
-    </div>
-    <div class="xyz">
-      <div class="flip-card">
-            <a href="pricing">
-            <img src="{% static 'img/signup1.jpg'%}" alt="Avatar" style="width:300px;height:300px;"></a>
-          </div>
-          <div class="name" >
-                <h2>Grow Taller</h2>
-        </div>
-    </div>
-  </div>
+  {% endfor %}
 </body>
 </html>

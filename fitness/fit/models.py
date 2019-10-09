@@ -1,5 +1,18 @@
 from django.db import models
 
+class Meals(models.Model):
+    name = models.CharField(max_length=70)
+    desc = models.TextField(max_length = 500)
+    image = models.ImageField(upload_to='meals')
+
+class Trainer(models.Model):
+    name = models.CharField(max_length=70)
+    type = models.ForeignKey(Meals, on_delete = models.PROTECT)
+    salary = models.IntegerField()
+    rating = models.IntegerField()
+    image = models.ImageField(upload_to='trainers')
+    desc = models.TextField(max_length=200)
+
 class Profile(models.Model):
     customer = 'customer'
     trainer = 'trainer'
@@ -30,12 +43,3 @@ class Customer(models.Model):
     trainerId = models.ForeignKey(Trainer, on_delete = models.PROTECT)
     mealId = models.ForeignKey(Meals, on_delete = models.PROTECT)
 
-class Trainer(models.Model):
-    name = models.CharField(max_length=70)
-    type = models.ForeignKey(Meals, on_delete = models.PROTECT)
-    salary = models.IntegerField()
-    rating = models.IntegerField()
-
-class Meals(models.Model):
-    name = models.CharField(max_length=70)
-    desc = models.TextField(max_length = 500)

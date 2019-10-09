@@ -29,20 +29,6 @@ h1{
 }
 
 /* Bottom right text */
-.text-block {
-  position: absolute;
-  top: 0px;
-  bottom: 20px;
-  background-color: #696464;
-  color: white;
-  padding-left: 20px;
-  padding-right: 20px;
-  justify-content: center;
-  margin-left: 50%;
-  height: 400px;
-  font-style:Arial;
-  text-decoration: none;
-}
 .img{
   height: 400px;
   width: 400px;
@@ -53,12 +39,8 @@ h1{
   float: left;
   padding: 15px;
   padding-left: 145px;
-}
-
-.xyz h3{
-  padding-left: 20px;
-}
-
+  padding-top: 50px;
+} 
 .flip-card {
   background-color: transparent;
   width: 300px;
@@ -107,51 +89,23 @@ h1{
   <div>
 	 <h1>MEET OUR TRAINERS</h1>
   </div>
+  {% for trainer in trainers %}
   <div class="container">
     <div class="xyz">
       <div class="flip-card">
         <div class="flip-card-inner">
           <div class="flip-card-front">
-            <img src="{% static 'img/trainer1.jpg'%}" alt="Avatar" style="width:300px;height:300px;">
+            <img src="{{trainer.image.url}}" alt="Avatar" style="width:300px;height:300px;">
           </div>
           <div class="flip-card-back">
-            <h1>John Doe</h1> 
-            <p>Architect & Engineer</p> 
-            <p>We love that guy</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-    <div class="xyz">
-      <div class="flip-card">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <img src="{% static 'img/trainer2.jpg'%}" alt="Avatar" style="width:300px;height:300px;">
-          </div>
-          <div class="flip-card-back">
-            <h1>John D</h1> 
-            <p>Architect & Engineer</p> 
-            <p>We love that guy</p>
-          </div>
-        </div>
-    </div>
-
-    </div>
-    <div class="xyz">
-      <div class="flip-card">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <img src="{% static 'img/trainer3.jpg'%}" alt="Avatar" style="width:300px;height:300px;">
-          </div>
-          <div class="flip-card-back">
-            <h1>John Dog</h1> 
-            <p>Architect & Engineer</p> 
-            <p>We love that dog</p>
+            <h1>{{trainer.name}}</h1> 
+            <p><h3>Category : {{trainer.type.name}}</h3></p> 
+            <p><h4>Rating : {{trainer.rating}}</h4></p>
           </div>
         </div>
       </div>
     </div>
   </div>
+    {% endfor %}
 </body>
 </html>
