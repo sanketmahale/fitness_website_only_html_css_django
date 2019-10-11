@@ -10,6 +10,8 @@ urlpatterns = [
     path('trainers',views.trainers,name='trainers'),
     path('signup',views.signup,name='signup'),
     path('recepies',views.recepies,name='recepies'),
+    path('pay',views.pay,name='pay'),
+    path('logout',views.logout,name='logout')
 ]
 
 urlpatterns = urlpatterns + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

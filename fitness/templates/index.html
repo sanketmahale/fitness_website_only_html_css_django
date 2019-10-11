@@ -67,34 +67,22 @@ section{
 #mySidenav a {
   float: right;
   right: -80px;
-  overflow: hidden;
-  transition: 0.3s;
-  padding: 15px;
+  color: #f5f5f5;
   width: 100px;
   text-decoration: none;
-  font-size: 16px;
-  color: white;
-  border-radius: a 5px 5px 0;
-}
-
-#mySidenav a:hover {
-  right: 0;
 }
 
 #signin {
-  top: 20px;
   background-color: #39bdc8;
 }
 
 #login {
-  top: 80px;
   background-color: #226b80;
 }
 .container {
   position :relative;
 }
 
-/* Bottom right text */
 .text-block {
   position: absolute;
   top: 0px;
@@ -186,8 +174,13 @@ section{
   <a href="recepies">Health Plan</a>
   <a href="#about">About</a>
   <div id="mySidenav" class="sidenav">
+    {% if user.is_authenticated %}
+    <a href="logout" id="signin">Log Out</a>
+    <a id="login" style="margin-right: 38%; background-color: #d2fafb; color: #226b80;">Hi,{{user.username}}</a >
+    {% else %}
     <a href="pricing" id="signin">Sign Up</a>
     <a href="login" id="login">Login</a>
+    {% endif %}
   </div>
 </div>
 

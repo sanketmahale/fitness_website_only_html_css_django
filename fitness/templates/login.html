@@ -81,14 +81,14 @@ input[type=text]:focus, input[type=password]:focus {
         <img src="{% static 'img/imgg.png' %}" width=50px height=50px>
     </div>
 <div class="bg-img">
-  <form class="container">
+  <form class="container" method="POST" action='login'>
+    {% csrf_token %}
     <h1>Login</h1>
-
-    <label for="email"><b>Email</b></label>
-    <input type="text" placeholder="Enter Email" name="email" required>
+    <label for="username"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="username" required>
 
     <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
+    <input type="password" placeholder="Enter Password" name="password" required>
 
     <button type="submit" class="btn">Login</button>
   </form>
