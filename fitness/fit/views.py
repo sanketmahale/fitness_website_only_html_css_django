@@ -44,9 +44,10 @@ def signup(request):
         user.save()
         position = 'customer'
         cats = Meals.objects.all()
-        category = request.POST['category']
+        category = request.POST.get('category')
+        print(category)
         for cat in cats:
-            if(cat.name==category):
+            if(cat.name == category):
                 mealId = cat
         profile = Profile.objects.create(user=user,position=position,mealId=mealId)
         profile.save()
