@@ -41,23 +41,15 @@ div {
       {% csrf_token %}
     <label for="fname">Name</label>
     <input type="text" id="fname" name="name" placeholder="Card Holder Name">
-
-    <label for="category">Category</label>
-    <select id="category" name="category">
-        {% for plan in plans %}
-            <option value={{plan.name}}>{{plan.name}}</option>
-        {% endfor %}
-    </select>
     
-    <label for="plan">Plan</label>
-    <select id="plan" name="plan">
-        <option value="basic">BASIC</option>
-        <option value="pro">PRO</option>
-        <option value="premium">PREMIUM</option>
-    </select>
-
+    <label for="fname">Address</label>
+    <input type="text" id="fname" name="firstname" placeholder="Card Holder Address">
+    
     <label for="fname">Credit Card Number</label>
     <input type="text" id="fname" name="firstname" placeholder="Card Number">
+    
+    <label for="fname">CVV</label>
+    <input type="text" id="fname" name="firstname" placeholder="CVV">
   
     <input type="submit" value="Submit">
   </form>

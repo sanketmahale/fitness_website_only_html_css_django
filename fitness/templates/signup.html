@@ -93,7 +93,23 @@ h2{
     <i class="fa fa-key icon"></i>
     <input class="input-field" type="password" placeholder="Password" name="password">
   </div>
+  <label for="fname" style="color:white;">Select Plan</label>
+  <div class="input-container">
+  <select class="input-field" id="category" name="category">
+      {% for plan in plan %}
+          <option  value={{plan.name}}>{{plan.name}}</option>
+      {% endfor %}
+  </select>
+
+  <select id="plan" name="plan">
+      <option value="basic">BASIC</option>
+      <option value="pro">PRO</option>
+      <option value="premium">PREMIUM</option>
+  </select>
+
+</div>
   <button type="submit" class="btn">Register</button>
+  
 </form>
 
 </body>

@@ -1,6 +1,6 @@
+{% extends "base.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html>
+{% block content %}
 <head>
 <link rel="stylesheet" href="{% static 'css/master.css'%}">
 <style>
@@ -163,27 +163,6 @@ section{
 </script>
 </head>
 <body>
-
-  <div class="picture">
-    <img src="{% static 'img/imgg.png' %}" width=50px height=50px>
-  </div>
-
-<div class="topnav">
-  <a class="active" href="trainers">Trainers</a>
-  <a href="#news">Workout</a>
-  <a href="recepies">Health Plan</a>
-  <a href="#about">About</a>
-  <div id="mySidenav" class="sidenav">
-    {% if user.is_authenticated %}
-    <a href="logout" id="signin">Log Out</a>
-    <a id="login" style="margin-right: 38%; background-color: #d2fafb; color: #226b80;">Hi,{{user.username}}</a >
-    {% else %}
-    <a href="pricing" id="signin">Sign Up</a>
-    <a href="login" id="login">Login</a>
-    {% endif %}
-  </div>
-</div>
-
 <div class="container">
   <img class="img" src="{% static 'img/first.jpg'%}" alt="Norway" style="width:50%;">
   <div class="text-block">
@@ -241,13 +220,13 @@ section{
 <div>
 <footer class="footer-distributed">
     <div class="footer-left">
-        <h3>Fittness<span> Website</span></h3>
+        <h3>Fitness<span> Website</span></h3>
       <p class="footer-links">
         <a href="#">Home</a>
         ·
         <a href="pricing">Pricing</a>
         ·
-        <a href="#">About</a>
+        <a href="about">About</a>
         ·
         <a href="#">Contact</a>
       </p>
@@ -274,5 +253,4 @@ section{
       </p>
     </div>
   </footer>
-</body>
-</html>
+  {% endblock content %}

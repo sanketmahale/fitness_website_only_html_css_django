@@ -1,0 +1,110 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+    .body{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .picture{
+    overflow: hidden;
+    background-color: rgb(24, 91, 179);
+  }
+  
+  .picture img {
+    float: left;
+    clear:both;
+  }
+  
+  .topnav {
+    overflow: hidden;
+    background-color: #d2fafb;
+    position: -webkit-sticky; /* Safari */
+    position :relative;
+    top: 0;
+    width: 100%
+  }
+  
+  .topnav a {
+    float: left;
+    color: rgb(128, 129, 196);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .topnav a:hover {
+    background-color: rgb(0, 0, 0);
+    color: rgb(218, 230, 228);
+  }
+  
+  .topnav a.active {
+    background-color: rgb(49, 144, 168);
+    color: rgb(218, 230, 228);
+  }
+  section{
+    padding: 0%;
+  }
+  .first{
+    background-color: #d2fafb;
+    height : 400px;
+    padding-top: 0px ;
+    padding: 0px;
+    margin: 0px;
+    display:flex;
+  }
+  .footer{
+    background-color: #95adbe;
+    height : 350px;
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+  }
+  #mySidenav a {
+    float: right;
+    right: -80px;
+    color: #f5f5f5;
+    width: 100px;
+    text-decoration: none;
+  }
+  
+  #signin {
+    background-color: #39bdc8;
+  }
+  
+  #login {
+    background-color: #226b80;
+  }
+</style>
+    <title>Document</title>
+</head>
+<body>
+    
+  <div class="picture">
+      <a href="/">
+        <img src="{% static 'img/imgg.png' %}"  width=50px height=50px></img></a>
+      </div>
+    
+    <div class="topnav">
+      <a class="active" href="trainers">Trainers</a>
+      <a href="workout">Workout</a>
+      <a href="recepies">Health Plan</a>
+      <a href="about">About</a>
+      <div id="mySidenav" class="sidenav">
+        {% if user.is_authenticated %}
+        <a href="logout" id="signin">Log Out</a>
+        <a id ="login" style="width:105px;">Your Trainer</a>
+        <a id="login" style="margin-right: 30%; background-color: #d2fafb; color: #226b80;">Hi,{{user.username}}</a >
+        {% else %}
+        <a href="pricing" id="signin">Sign Up</a>
+        <a href="login" id="login">Login</a>
+        {% endif %}
+      </div>
+    </div>    
+    {% block content %}
+    {% endblock content %}
+</body>
+</html>

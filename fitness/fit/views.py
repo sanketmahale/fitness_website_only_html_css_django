@@ -43,31 +43,38 @@ def signup(request):
         user = User.objects.create_user(username=name,password=password,email=email)
         user.save()
         position = 'customer'
-        profile = Profile.objects.create(user=user,position = position)
+        cats = Meals.objects.all()
+        category = request.POST['category']
+        for cat in cats:
+            if(cat.name==category):
+                mealId = cat
+        profile = Profile.objects.create(user=user,position=position,mealId=mealId)
         profile.save()
+
+        plan = request.POST.get('plan') 
+        trainers = Trainer.objects.all()
+        for trainer in trainers :
+            if(trainer.mealId.name==category):
+                train = trainer
+        customer = Customer.objects.create(name=name,pricing=plan,trainerId=train)
         print("User created")
         return redirect('pay')
     else:
-        return render(request,'signup.html')
-def recepies(request):
+        plan = Meals.objects.all()
+        return render(request,'signup.html',{'plan':plan})
+
+def recepies(request):  
+    customer = Customer.objects.all()
     meals = Meals.objects.all()
-    return render(request,'recepies.html',{'meals':meals})
+    profile = Profile.objects.all()
+    current_user = request.user
+    for p in profile:
+        if(current_user.pk == p.user_id):
+            data = p.mealId
+    return render(request,'recepies.html',{'meals':meals,'data':data})
 
 def pay(request):
     if(request.method=="POST"):
-        name = request.POST['name']
-        plan = request.POST.get('plan')
-        category = request.POST.get('category')
-        cats = Meals.objects.all()
-        for cat in cats:
-            if(cat.name==category):
-                mealId = cat 
-        trainers = Trainer.objects.all()
-        for trainer in trainers :
-            if(trainer.type.name==category):
-                train = trainer
-
-        customer = Customer.objects.create(name=name,pricing=plan,trainerId=train,mealId=mealId)
         return redirect('/')
     else:    
         plans = Meals.objects.all()
@@ -76,3 +83,9 @@ def pay(request):
 def logout(request):
     auth.logout(request)
     return redirect('/')
+
+def workout(request):
+    return render(request,'workout.html')
+
+def about(request):
+    return render(request,'about.html')

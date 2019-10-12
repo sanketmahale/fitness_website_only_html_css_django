@@ -1,7 +1,6 @@
+{% extends "base.html" %}
+{% block content %}
 {% load static %}
-<!DOCTYPE html>
-<html>
-<head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 body, html {
@@ -28,7 +27,7 @@ body, html {
   background-image: url("{% static 'img/login.jpg' %}");
 
   min-height: 600px;
-
+  margin-top: 0%;
   /* Center and scale the image nicely */
   background-position: center;
   background-repeat: no-repeat;
@@ -41,6 +40,7 @@ body, html {
   position: absolute;
   right: 0;
   margin: 20px;
+  margin-top: 5%;
   max-width: 300px;
   padding: 16px;
   background-color: white;
@@ -77,9 +77,6 @@ input[type=text]:focus, input[type=password]:focus {
 </style>
 </head>
 <body>
-    <div class="picture">
-        <img src="{% static 'img/imgg.png' %}" width=50px height=50px>
-    </div>
 <div class="bg-img">
   <form class="container" method="POST" action='login'>
     {% csrf_token %}
@@ -93,8 +90,4 @@ input[type=text]:focus, input[type=password]:focus {
     <button type="submit" class="btn">Login</button>
   </form>
 </div>
-
-
-
-</body>
-</html>
+{% endblock content %}

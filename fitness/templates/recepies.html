@@ -1,4 +1,6 @@
+{% extends "base.html" %}
 {% load static %}
+{% block content %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -113,9 +115,6 @@ h1{
 	<title>Trainers</title>
 </head>
 <body>
-	<div class="picture">
-    	<img src="{% static 'img/imgg.png' %}" width=50px height=50px>
-  	</div>
   <div>
 	 <h1>Healthy food</h1>
   </div>
@@ -123,14 +122,19 @@ h1{
   <div class="container">
     <div class="xyz">
       <div class="flip-card">
+            {% if user.is_authenticated and data.name == meal.name %}
+            <a href="{{meal.file.url}}">
+              {% csrf_token %}
+            {% else %}
             <a href="pricing">
-            <img src="{{meal.image.url}}" alt="Avatar" style="width:300px;height:300px;"></a>
+            {% endif %}
+            <input type="image" src="{{meal.image.url}}" alt="Avatar" name=data value= "" style="width:300px;height:300px;"></a>
             <div class="name" >
                     <h2>{{meal.name}}</h2>
             </div>
+          </form>
         </div>
     </div>
     </div>
   {% endfor %}
-</body>
-</html>
+{% endblock content %}
