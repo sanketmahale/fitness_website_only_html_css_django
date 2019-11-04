@@ -5,6 +5,9 @@ class Meals(models.Model):
     desc = models.TextField(max_length = 500)
     image = models.ImageField(upload_to='meals')
     file = models.FileField(upload_to='pdf')
+    
+    def __str__(self):
+        return self.name
 
 class Trainer(models.Model):
     name = models.CharField(max_length=70)
@@ -13,7 +16,11 @@ class Trainer(models.Model):
     image = models.ImageField(upload_to='trainers')
     desc = models.TextField(max_length=200)
     mealId = models.ForeignKey(Meals, on_delete = models.PROTECT)
-
+    
+    
+    def __str__(self):
+        return self.name
+    
 class Profile(models.Model):
     customer = 'customer'
     trainer = 'trainer'
@@ -27,7 +34,9 @@ class Profile(models.Model):
     choices=POSITION_CHOICES, default = customer
     )
     mealId = models.ForeignKey(Meals, on_delete = models.PROTECT)
-
+    
+    
+    
 class Customer(models.Model):
     name = models.CharField(max_length=70)
     basic='basic'
@@ -43,4 +52,7 @@ class Customer(models.Model):
     choices=PRICING, default = basic
     )
     trainerId = models.ForeignKey(Trainer, on_delete = models.PROTECT)
-
+    
+    
+    def __str__(self):
+        return self.name
